@@ -1,18 +1,23 @@
+<script setup lang="ts"></script>
+
 <template>
-  <h1>hello</h1>
-  <v-app>
-    <v-main>
-      <HelloWorld />
-    </v-main>
-  </v-app>
+  <RouterView />
 </template>
 
-<script setup lang="ts">
-  import HelloWorld from '@/components/HelloWorld.vue'
-</script>
+<style>
+html,
+body {
+  background-color: black;
+}
+</style>
 
 <style lang="scss" scoped>
 h1 {
   color: gold;
+}
+.dialog {
+  display: block;
+  width: 100px;
+  height: 100px;
 }
 </style>
