@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useService } from "@/service/service";
+import { ref } from "vue";
+
+const service = ref(useService());
+</script>
 
 <template>
-  <RouterView />
+  <RouterView :service="service" />
 </template>
 
 <style>

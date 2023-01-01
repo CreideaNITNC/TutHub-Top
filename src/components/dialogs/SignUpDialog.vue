@@ -23,6 +23,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  error: {
+    type: String,
+    default: "",
+  },
 });
 
 const emits = defineEmits<{
@@ -64,6 +68,7 @@ const emits = defineEmits<{
           :model-value="password"
           @update:model-value="(v) => emits('update:password', v)"
         />
+        <p v-show="error" class="error">{{ error }}</p>
       </v-form>
     </SignDialog>
   </div>
@@ -75,6 +80,7 @@ const emits = defineEmits<{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 
   width: 100%;
   height: 100%;
@@ -91,6 +97,14 @@ const emits = defineEmits<{
       left: 70px;
       right: auto;
     }
+  }
+
+  & > .error {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    text-align: center;
+    color: red;
   }
 }
 </style>

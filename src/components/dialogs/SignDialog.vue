@@ -24,9 +24,7 @@ function close() {
 }
 
 const onSubmit = (): void => {
-  if (!props.valid) return;
-  emit("submit");
-  close();
+  if (props.valid) emit("submit");
 };
 </script>
 

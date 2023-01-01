@@ -24,6 +24,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  error: {
+    type: String,
+    default: "",
+  },
 });
 
 const emits = defineEmits<{
@@ -68,7 +72,7 @@ function emitId(v: string) {
           v-else
           pattern="username"
           :model-value="id"
-          @update:mode-value="emitId"
+          @update:model-value="emitId"
         />
         <SignTextField
           pattern="password"
@@ -83,6 +87,7 @@ function emitId(v: string) {
             color="success"
           />
         </div>
+        <p v-show="error" class="error">{{ error }}</p>
       </v-form>
     </SignDialog>
   </div>
@@ -111,6 +116,14 @@ function emitId(v: string) {
         left: 70px;
         right: auto;
       }
+    }
+
+    & > .error {
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
+      text-align: center;
+      color: red;
     }
   }
 }
