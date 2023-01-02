@@ -8,7 +8,6 @@ export default interface SignInService {
 
 export interface SignInSuccess {
   type: "success";
-  bearerToken: string;
 }
 
 export interface SignInFailure {

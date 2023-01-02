@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useService } from "@/service/service";
+import { reactive } from "vue";
 
-const service = useService();
+const service = reactive(useService());
 </script>
 
 <template>
