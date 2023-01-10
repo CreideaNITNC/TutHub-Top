@@ -1,0 +1,27 @@
+name: Vue Test
+on: pull_request
+
+jobs:
+  build:
+    name: TutHub-Top Test
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: npm install
+        run: npm install
+
+      - name: vitest
+        run: npm run test
+
+      - name: lint
+        run: npm run lint
+
+      - name: build
+        run: npm run build
