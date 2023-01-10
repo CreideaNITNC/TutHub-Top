@@ -6,6 +6,8 @@ export default interface RepositoryListService {
    */
   load(): Promise<readonly RepositoryOverview[]>;
 
+  create(name: string, title: string): Promise<void>;
+
   /**
    * リポジトリを削除する
    * @param name 削除するリポジトリ名

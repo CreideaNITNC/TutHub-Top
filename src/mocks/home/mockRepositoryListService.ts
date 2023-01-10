@@ -37,4 +37,8 @@ export default class MockRepositoryListService
   async remove(name: string): Promise<void> {
     console.log(`repository remove ${name}`);
   }
+
+  async create(name: string, title: string): Promise<void> {
+    console.log(`repository create name: ${name}, title: ${title}`);
+  }
 }
