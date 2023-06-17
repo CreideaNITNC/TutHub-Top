@@ -35,6 +35,7 @@ const RULES: Record<Pattern, readonly Rule[]> = {
 };
 
 const rules = computed(() => RULES[props.pattern]);
+const inputType = computed(() => props.pattern === 'password' ? 'password' : 'text');
 </script>
 
 <template>
@@ -43,6 +44,7 @@ const rules = computed(() => RULES[props.pattern]);
       class="shrink"
       :label="pattern"
       :rules="rules"
+      :type="inputType"
       hide-details="auto"
       bg-color="white"
       @update:model-value="(v) => emits('update:modelValue', v)"
